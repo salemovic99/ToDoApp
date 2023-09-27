@@ -1,0 +1,28 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #121215;
+    color: #4d398b;
+}
+#card {
+    background-color: #18181c;
+    color: #dfe0fb;
+    border-radius:30px;
+}
+#form {
+    background-color: #18181c;
+}

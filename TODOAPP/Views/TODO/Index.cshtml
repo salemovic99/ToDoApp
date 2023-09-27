@@ -1,0 +1,53 @@
+﻿@model List<TaskTable>
+
+
+
+<h1 class="text-center fw-light display-3 mb-5 mt-5" style="color:#8662f7"> <span style="color:#dfe0fb">TO</span>DO APP</h1>
+
+
+<div class="container ">
+
+    <div>
+            <a class="btn btn-outline-primary rounded-pill mb-5 px-4 py-2  text-uppercase" asp-action="Create">  Add Task</a>
+    </div>
+
+    <div class="row">
+
+
+   @foreach(var item in Model)
+    {
+        <div id="card" class="card col-5 mx-4 mb-4 py-4">
+            <div class="card-body">
+
+                <h5 class="card-title fw-light"> <i class="pe-2 fw-bold">Task</i>  @item.TaskName</h5>
+                <h5 class="card-title fw-light"><i class="pe-2 fw-bold">Status</i>  @item.Status.StatusName</h5>
+                <h5 class="card-title fw-light"><i class="pe-2 fw-bold">Category</i>  @item.Category.CategoryName</h5>
+                <h5 class="card-text fw-light"><i class="pe-2 fw-bold">Priority</i>   @item.Priority</h5>
+                <p class="card-text fw-light">Created  @item.CreatedAtdate</p>
+
+                    @if (item.Status.StatusName == "Pending")
+                    {
+                        <a class="btn btn-outline-primary " asp-action="UpdateStatus" asp-route-id ="@item.TaskId" >Start Task</a>
+                    }
+                    else if(item.Status.StatusName == "Open")
+                    {
+                        
+                        <a class="btn btn-primary"><i class="bi bi-hourglass-split"></i></a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success bg-success"><i class="bi bi-check-circle"></i></a>
+                    }
+
+
+                <a class="btn btn-outline-primary" asp-route-id="@item.TaskId" asp-action="Edit"><i class="bi bi-pencil-square"></i> </a>
+                <a class="btn btn-outline-danger " asp-action="Delete" asp-route-id="@item.TaskId"><i class="bi bi-trash"></i></a>
+            </div>
+        </div>
+    }
+    </div>
+
+</div>
+
+
+

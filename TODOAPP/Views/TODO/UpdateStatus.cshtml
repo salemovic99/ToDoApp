@@ -1,0 +1,19 @@
+﻿@model TaskTable
+
+<div class="container">
+
+    <h1 class="text-center fw-light display-3 mb-5 mt-5" style="color:#8662f7"> <span style="color:#dfe0fb">TO</span>DO APP</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-9 p-5 ">
+            
+           <form method="post" asp-action="UpdateStatus">
+                <h1>Are You Sure You Want Start Task <span class="text-white fw-bold"> @Model.TaskName</span></h1>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary rounded-pill px-4 py-2" asp-action="UpdateStatus" asp-route-id="@Model.TaskId">Yes</button>
+                    <a class="btn btn-outline-secondary rounded-pill px-4 py-2" asp-action="Index">Cancel</a>
+                </div>
+           </form>
+        </div>
+    </div>
+</div>

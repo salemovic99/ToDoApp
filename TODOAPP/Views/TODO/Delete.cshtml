@@ -1,0 +1,17 @@
+﻿@model TaskTable
+<div class="container">
+    <h1 class="text-center fw-light display-3 mb-5 mt-5" style="color:#8662f7"> <span style="color:#dfe0fb">TO</span>DO APP</h1>
+
+    <div class="row d-flex justify-content-center align-content-center">
+
+        <div class=" col-8 bg-black-50  fw-light text-white rounded-3  px-2 py-5 mt-5">
+           <form method="post" asp-action="Delete" asp-route-id="@Model.TaskId" class="">
+
+                <h2 class="fw-light text-uppercase mb-4 text-white">Are you sure want delete task <span class="fw-bold">@Model.TaskName</span> ?</h2>              
+                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 mt-4 ms-4">Yes</button>
+                <a class="btn btn-outline-secondary rounded-pill mt-4 " asp-action="Index">Cancel</a>
+           </form>
+        </div>
+    </div>
+
+</div>
